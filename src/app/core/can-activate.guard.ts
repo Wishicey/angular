@@ -40,7 +40,7 @@ export class CanActivateGuard implements CanActivate {
             this.router.navigate(['/auth/signin']);
             this.snackBar.open('Vous n\'êtes pas connecté', 'Ok', {
               duration: 3000,
-            })
+            });
             return false;
           }
           return true;
@@ -49,7 +49,8 @@ export class CanActivateGuard implements CanActivate {
             this.router.navigate(['/auth/signin']);
             this.snackBar.open('Vous n\'êtes pas connecté en administateur', 'Ok', {
               duration: 3000,
-            })
+            });
+            this.router.navigate(['/dash/home']);
             return false;
           }
           return true;
